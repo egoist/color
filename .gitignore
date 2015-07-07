@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+deploy
 
 # Runtime data
 pids
