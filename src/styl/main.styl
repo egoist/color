@@ -1,0 +1,27 @@
+@import 'vars'
+@import 'mixins'
+@import 'media'
+
+body
+  margin 0
+  background-color #fafafa
+  font 16px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"
+
+h1,h2,h3,h4,h5,h6,ul,ol
+  margin 0
+
+.container
+  max-width $mainWidth
+  margin 0 auto
+
+.clearfix
+  &:after
+    content ''
+    clear both
+    display block
+    visibility hidden
+    height 0
+
+a
+  color #333
+  text-decoration none
