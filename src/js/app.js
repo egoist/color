@@ -22,7 +22,7 @@
 
   function generate() {
     var color = randomColor()
-    if(colors.length > 50) {
+    if(colors.length > 15) {
       colors.splice(0, 1)
     }
     colors.push(color)
