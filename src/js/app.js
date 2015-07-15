@@ -48,6 +48,7 @@
     colorBox.innerHTML = color
     colorBox.setAttribute('data-clipboard-text', color)
     colorHistory()
+    location.hash = color
   }
   W.generate = generate
 
