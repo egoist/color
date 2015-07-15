@@ -16,7 +16,15 @@
   } )
   D.getElementById('generate').addEventListener('click', generate)
   D.getElementById('history').addEventListener('click', function() {
-    D.getElementById('color-history').style.display = 'block'
+    var his = D.getElementById('color-history')
+    if(!his.getAttribute('show') || his.getAttribute('show') == 'false') {
+      his.style.display = 'block'
+      his.setAttribute('show', true)
+    } else {
+      his.style.display = 'none'
+      his.setAttribute('show', false)
+    }
+
   })
   colorHistory()
 
