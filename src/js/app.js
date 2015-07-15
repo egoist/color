@@ -39,7 +39,7 @@
     } else {
       var color = randomColor()
     }
-    if(ArrayUnique(colors).length > 15) {
+    if(ArrayUnique(colors).length > 50) {
       colors.splice(0, 1)
     }
     colors.push(color)
