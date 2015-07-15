@@ -1,8 +1,13 @@
 (function(W, D) {
+  var hash = location.hash
   var colors = store.get('colors') || []
   var colorBox = D.getElementById('currentColor')
 
-  generate()
+  if(hash && hash.length == 7) {
+    generate(hash)
+  } else {
+    generate()
+  }
 
   var client = new ZeroClipboard(colorBox)
   client.on( "ready", function( readyEvent ) {
