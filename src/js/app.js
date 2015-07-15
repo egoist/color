@@ -28,8 +28,12 @@
   })
   colorHistory()
 
-  function generate() {
-    var color = randomColor()
+  function generate(c) {
+    if(typeof c == 'string') {
+      var color = c
+    } else {
+      var color = randomColor()
+    }
     if(colors.length > 15) {
       colors.splice(0, 1)
     }
@@ -40,6 +44,7 @@
     colorBox.setAttribute('data-clipboard-text', color)
     colorHistory()
   }
+  W.generate = generate
 
   function colorHistory() {
     var copys = []
@@ -47,15 +52,11 @@
     var html = D.getElementById('history-tpl').innerHTML
     var output = ''
     var colors = store.get('colors')
-    colors = reverse(colors)
+    colors = ArrayUnique(reverse(colors))
     for(var i=0;i<colors.length;i++) {
       output += html.replace(/__COLOR__/g, colors[i]).replace(/__ORDER__/g, i)
     }
     his.innerHTML = output
-    for(var i=0;i<colors.length;i++) {
-      copys[i] = new ZeroClipboard(D.getElementById('copy-' + i))
-
-    }
   }
   function reverse(array) {
     var length = array.length
@@ -76,9 +77,10 @@
         D.querySelector('.info-' + mark).innerHTML = ''
     }, 2000)
   }
-  W.addEventListener('click', function(e) {
-    if(e.target.classList.contains('color-history')) {
-      showinfo('Copied: ' + e.target.getAttribute('data-clipboard-text'))
-    }
-  })
+  function ArrayUnique(array) {
+    return array.reduce(function(previous, current) {
+      if (previous.indexOf(current) < 0) previous.push(current);
+      return previous;
+    }, []);
+  }
 })(window, document);
