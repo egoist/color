@@ -6,8 +6,7 @@ var
   swig = require('gulp-swig'),
   sourcemaps = require('gulp-sourcemaps'),
   concat = require('gulp-concat'),
-  serve = require('gulp-serve'),
-  minifyHTML = require('gulp-minify-html');
+  serve = require('gulp-serve')
 
 
 gulp.task('serve', serve({
@@ -16,7 +15,7 @@ gulp.task('serve', serve({
 }))
 
 gulp.task('js', function() {
-  gulp.src(['./src/js/app.js'])
+  gulp.src(['./src/js/randomColor.js', './src/js/store.js', './src/js/app.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('vendor.js'))
     .pipe(uglify())
@@ -36,7 +35,6 @@ gulp.task('html', function() {
   };
   gulp.src('./src/html/index.html')
     .pipe(swig(opts))
-    .pipe(minifyHTML())
     .pipe(gulp.dest('./'))
 })
 

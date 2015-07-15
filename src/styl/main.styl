@@ -25,3 +25,83 @@ h1,h2,h3,h4,h5,h6,ul,ol
 a
   color #333
   text-decoration none
+
+#currentColor
+  font bold 80px/1 "Helvetica Neue", Helvetica, Arial, sans-serif
+  padding 10px
+  cursor pointer
+
+.main
+  padding-top 200px
+  text-align center
+
+.action
+  margin-top 20px
+
+.btn
+  background-color rgba(0, 0, 0, 0.05)
+  border 1px solid transparent
+  border-radius 2px
+  padding 15px 25px
+  outline none
+  font-size 20px
+  cursor pointer
+  &:hover
+    background-color rgba(238, 238, 238, 0.24)
+
+.bar
+  background-color rgba(0, 0, 0, 0.05)
+  height 44px
+  line-height @height
+  position fixed
+  bottom 0
+  left 0
+  right 0
+  a
+    display inline-block
+    padding 0 20px
+    cursor pointer
+    &:hover
+      background-color rgba(238, 238, 238, 0.24)
+
+.color-dot
+  width 10px
+  height @width
+  display inline-block
+  float left
+  margin-top 5px
+
+#color-history
+  background-color white
+  display none
+  position fixed
+  left 20px
+  bottom 50px
+  width 200px
+  max-height 80%
+  overflow auto
+
+.color-history
+  padding 5px 10px
+  cursor pointer
+  &:hover
+    background-color rgba(238, 238, 238, 0.24)
+
+.color-value
+  display inline-block
+  padding-left 0
+  width 100px
+  float left
+
+#info
+  padding 5px 10px
+  background-color #333
+  color #fff
+  width 240px
+  position fixed
+  left 50%
+  top 20px
+  margin-left -120px
+  border-radius 3px
+  &:empty
+    display none

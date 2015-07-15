@@ -1,1 +1,30 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>sitename</title><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><link rel=stylesheet href="./build/css/main.css?t=1436955161143" media=screen charset=utf-8></head><body><script src="./build/js/vendor.js?t=1436955161143"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Color</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./build/css/main.css?t=1436960416172" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div id="info"></div>
+    <div class="main container">
+      <div id="currentColor">#______</div>
+      <div class="action">
+        <button class="btn" type="button" id="generate">generate</button>
+      </div>
+      <div id="color-history"></div>
+    </div>
+    <div class="bar">
+      <a id="history">History</a>
+    </div>
+    <script id="history-tpl" type="text/template">
+      <div id="copy-__ORDER__" class="color-history clearfix" data-clipboard-text="__COLOR__">
+      <span style="background-color:__COLOR__" class="color-dot"></span>
+      <span class="color-value">__COLOR__</span>
+      </div>
+    </script>
+    <script src="//dn-staticfile.qbox.me/zeroclipboard/2.1.6/ZeroClipboard.min.js"></script>
+    <script src="./build/js/vendor.js?t=1436960416172"></script>
+  </body>
+</html>
