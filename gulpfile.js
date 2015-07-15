@@ -16,7 +16,7 @@ gulp.task('serve', serve({
 }))
 
 gulp.task('js', function() {
-  gulp.src(['./src/js/jquery.js', './src/js/nunjucks.js', './src/js/q.js', './src/js/app.js'])
+  gulp.src(['./src/js/app.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('vendor.js'))
     .pipe(uglify())
